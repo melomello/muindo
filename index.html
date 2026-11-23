@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>무인도 키우기</title>
+  <script type="module" crossorigin src="./assets/index-DyXWJTt6.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-QechV25s.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <div>
+      <div class="money" id="money">0</div>
+      <div class="ips" id="ips">초당 0</div>
+    </div>
+    <div class="res" id="res"></div>
+  </header>
+  <div id="stage"><div id="isle-name"></div><div id="olv"><b></b><i><s></s></i></div>
+    <div id="homebar" hidden><span></span><button>나가기</button></div>
+    <div id="modebar" hidden><span></span><button>그만</button></div>
+    <!-- 다음 할 일: 섬 화면 아래쪽 얇은 띠 -->
+    <div id="hint"><b>📌</b><span></span><i>▶</i></div></div>
+  <!-- 섬 화면 바로 아래 버튼 줄. 섬을 가리지 않게 화면 밖으로 뺐습니다 -->
+  <div id="dock">
+    <button id="missionbtn" title="미션"><span class="ic">📜</span><span class="lb">미션</span><span class="badge" hidden></span></button>
+    <button id="fishbtn" title="놀이"><span class="ic">🎮</span><span class="lb">놀이</span></button>
+    <button id="homebtn" title="섬지기 집"><span class="ic">🏠</span><span class="lb">집</span></button>
+    <button id="mapbtn" title="항해"><span class="ic">⛵</span><span class="lb">항해</span></button>
+    <button id="share" title="내 섬 자랑하기"><span class="ic">📸</span><span class="lb">자랑</span></button>
+  </div>
+  <nav>
+    <button data-tab="build" class="on">건물</button>
+    <button data-tab="island">강화</button>
+    <button data-tab="crew">동료<span class="badge" hidden></span></button>
+    <button data-tab="life">생활<span class="badge" hidden></span></button>
+    <button data-tab="book">도감<span class="badge" hidden></span></button>
+  </nav>
+  <div id="panel"></div>
+</div>
+<div id="modal"><div class="box" id="mbox"></div></div>
+<div id="guide"></div>
+</body>
+</html>
