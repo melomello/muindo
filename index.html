@@ -13,9 +13,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="무인도">
-<meta name="theme-color" content="#0e2a44">
-  <script type="module" crossorigin src="./assets/index-BaYHegVC.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-B5m-Nc7h.css">
+<meta name="theme-color" content="#0e2a44">
+  <script type="module" crossorigin src="./assets/index-CX5ul7uL.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Cg8e_4Lt.css">
 </head>
 <body>
 <div id="app">
@@ -26,9 +26,9 @@
     </div>
     <div class="res" id="res"></div>
   </header>
-  <div id="stage"><div id="isle-name"></div><button id="helpbtn" title="안내서">❓</button><div id="olv"><b></b><i><s></s></i></div>
+  <div id="stage"><div id="isle-name"></div><button id="helpbtn" title="안내서">❓</button><button id="duelbtn" hidden>🎮 같이 놀기</button><div id="chbar" hidden><b></b><span></span><button>포기</button></div><div id="olv"><b></b><i><s></s></i></div>
     <div id="homebar" hidden><span></span><button id="homeinv">💌 초대</button><button id="homeout">나가기</button></div>
-    <div id="modebar" hidden><span></span><button>그만</button></div>
+    <div id="modebar" hidden><span></span><button class="mx" id="modeflip" hidden>↔ 뒤집기</button><button class="mx" id="modestore" hidden>📦 보관함</button><button id="modestop">그만</button></div>
     <div id="zoombtns"><button id="zin" title="확대">＋</button><button id="zout" title="축소">－</button></div>
     <!-- 다음 할 일: 섬 화면 아래쪽 얇은 띠 -->
     <div id="hint"><b>📌</b><span></span><i>▶</i></div></div>
@@ -37,7 +37,7 @@
     <button id="missionbtn" title="미션"><span class="ic">📜</span><span class="lb">미션</span><span class="badge" hidden></span></button>
     <button id="fishbtn" title="놀이"><span class="ic">🎮</span><span class="lb">놀이</span></button>
     <button id="homebtn" title="섬지기 집"><span class="ic">🏠</span><span class="lb">집</span></button>
-    <button id="mapbtn" title="항해"><span class="ic">⛵</span><span class="lb">항해</span></button>
+    <button id="mapbtn" title="항해"><span class="ic">⛵</span><span class="lb">항해</span><span class="badge" hidden></span></button>
     <button id="share" title="내 섬 자랑하기"><span class="ic">📸</span><span class="lb">자랑</span></button>
   </div>
   <nav>
@@ -50,6 +50,6 @@
   <div id="panel"></div>
 </div>
 <div id="modal"><div class="box" id="mbox"></div></div>
-<div id="guide"></div>
+<div id="guide"></div>
 </body>
 </html>
