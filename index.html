@@ -4,7 +4,7 @@
   <!-- 구글 로그인 창과 같은 주소에서 열어야 아이폰에서 로그인이 막히지 않습니다. 옛 주소로 오면 새 주소로 보냅니다 -->
   <script>if(/github\.io$|\.web\.app$/.test(location.hostname)) location.replace('https://muindo-a6522.firebaseapp.com/' + location.search + location.hash);</script>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>무인도 키우기</title>
 <!-- 홈 화면에 추가했을 때 앱처럼 보이게 -->
 <link rel="manifest" href="manifest.webmanifest">
@@ -13,9 +13,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="무인도">
-<meta name="theme-color" content="#0e2a44">
-  <script type="module" crossorigin src="./assets/index-Dxs8GoNn.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DC9RQ-Vc.css">
+<meta name="theme-color" content="#cdbd92">
+  <script type="module" crossorigin src="./assets/index-Bu58YxmB.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CExbxRaM.css">
 </head>
 <body>
 <div id="app">
@@ -29,7 +29,7 @@
   <div id="stage"><div id="isle-name"></div><button id="helpbtn" title="안내서">❓</button><button id="duelbtn" hidden>🎮 같이 놀기</button><div id="chbar" hidden><b></b><span></span><button>포기</button></div><div id="olv"><b></b><i><s></s></i></div>
     <div id="homebar" hidden><span></span><button id="homeinv">💌 초대</button><button id="homeout">나가기</button></div>
     <div id="modebar" hidden><span></span><button class="mx" id="modeflip" hidden>↔ 뒤집기</button><button class="mx" id="modestore" hidden>📦 보관함</button><button id="modestop">그만</button></div>
-    <div id="zoombtns"><button id="zin" title="확대">＋</button><button id="zout" title="축소">－</button></div>
+    <div id="zoombtns"><button id="zin" title="확대">＋</button><button id="zout" title="축소">－</button><button id="zfit" title="섬 가운데로">⌖</button></div>
     <!-- 다음 할 일: 섬 화면 아래쪽 얇은 띠 -->
     <div id="hint"><b>📌</b><span></span><i>▶</i></div></div>
   <!-- 섬 화면 바로 아래 버튼 줄. 섬을 가리지 않게 화면 밖으로 뺐습니다 -->
