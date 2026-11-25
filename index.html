@@ -14,43 +14,74 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="무인도">
 <meta name="theme-color" content="#cdbd92">
-<link rel="preload" href="./fonts/yeop.ttf" as="font" type="font/ttf" crossorigin>
-  <script type="module" crossorigin src="./assets/index-DYPdWqkN.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-WlkB4Bym.css">
+<link rel="preload" href="./fonts/yeop.ttf" as="font" type="font/ttf" crossorigin>
+  <script type="module" crossorigin src="./assets/index-BTv-oF_O.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Cs5photz.css">
 </head>
 <body>
 <div id="app">
-  <header>
-    <div>
-      <div class="money" id="money">0</div>
-      <div class="ips" id="ips">초당 0</div>
+  <!-- 섬 그림이 화면 전체를 채웁니다. 떠오르는 숫자와 말풍선도 여기에 붙습니다 -->
+  <div id="stage"></div>
+  <!-- 섬 건물 위에 뜨는 알림과 건물 메뉴 -->
+  <div id="marks"></div>
+  <div id="bmenu" hidden></div>
+  <!-- 가장자리 정보와 버튼 -->
+  <div id="hud">
+    <div id="hud-top">
+      <button id="chip" title="내 섬"><span class="face"></span><span class="who"><b id="isle-name"></b><small id="olv"></small><i><s></s></i></span></button>
+      <div id="hint" hidden><b>📌</b><em></em><span></span><i>▶</i></div>
+      <div id="chbar" hidden><b></b><span></span><button>포기</button></div>
+      <div id="homebar" hidden><span></span><button id="homefurn">🪑 가구</button><button id="homeinv">💌 초대</button><button id="homeout">나가기</button></div>
+      <button id="resbar" title="자원 모두 보기"><span class="rc money"><i>🐚</i><b id="money">0</b><small id="ips">+0/초</small></span><span id="res"></span></button>
     </div>
-    <div class="res" id="res"></div>
-  </header>
-  <div id="stage"><div id="isle-name"></div><button id="helpbtn" title="안내서">❓</button><button id="duelbtn" hidden>🎮 같이 놀기</button><div id="chbar" hidden><b></b><span></span><button>포기</button></div><div id="olv"><b></b><i><s></s></i></div>
-    <div id="homebar" hidden><span></span><button id="homeinv">💌 초대</button><button id="homeout">나가기</button></div>
-    <div id="modebar" hidden><span></span><button class="mx" id="modeflip" hidden>↔ 뒤집기</button><button class="mx" id="modestore" hidden>📦 보관함</button><button id="modestop">그만</button></div>
+    <div id="hud-left">
+      <button id="missionbtn" class="hb" title="미션"><span class="ic">📜</span><span class="lb">미션</span><span class="badge" hidden></span></button>
+      <div id="evpill" hidden></div>
+      <button id="duelbtn" hidden>🎮 같이 놀기</button>
+    </div>
+    <div id="toasts"></div>
     <div id="zoombtns"><button id="zin" title="확대">＋</button><button id="zout" title="축소">－</button><button id="zfit" title="섬 가운데로">⌖</button></div>
-    <!-- 다음 할 일: 섬 화면 아래쪽 얇은 띠 -->
-    <div id="hint"><b>📌</b><span></span><i>▶</i></div></div>
-  <!-- 섬 화면 바로 아래 버튼 줄. 섬을 가리지 않게 화면 밖으로 뺐습니다 -->
-  <div id="dock">
-    <button id="missionbtn" title="미션"><span class="ic">📜</span><span class="lb">미션</span><span class="badge" hidden></span></button>
-    <button id="fishbtn" title="놀이"><span class="ic">🎮</span><span class="lb">놀이</span></button>
-    <button id="homebtn" title="섬지기 집"><span class="ic">🏠</span><span class="lb">집</span></button>
-    <button id="mapbtn" title="항해"><span class="ic">⛵</span><span class="lb">항해</span><span class="badge" hidden></span></button>
-    <button id="share" title="내 섬 자랑하기"><span class="ic">📸</span><span class="lb">자랑</span></button>
+    <div id="hud-bl">
+      <button id="mapbtn" class="hb big" title="항해"><span class="ic">⛵</span><span class="lb">항해</span><span class="badge" hidden></span></button>
+    </div>
+    <div id="hud-bc">
+      <button id="friendbtn" class="hb" title="친구"><span class="ic">👫</span><span class="lb">친구</span></button>
+      <button id="fishbtn" class="hb" title="놀이"><span class="ic">🎮</span><span class="lb">놀이</span><span class="badge" hidden></span></button>
+      <button id="homebtn" class="hb" title="섬지기 집"><span class="ic">🏠</span><span class="lb">집</span></button>
+    </div>
+    <div id="hud-br">
+      <button id="buildbtn" class="hb build" title="짓기"><span class="ic">🔨</span><span class="lb">짓기</span><span class="badge" hidden></span></button>
+    </div>
+    <div id="modebar" hidden><span></span><button class="mx" id="modeflip" hidden>↔ 뒤집기</button><button class="mx" id="modestore" hidden>📦 보관함</button><button id="modestop">그만</button></div>
+    <div id="respop" hidden></div>
+    <div id="visitcard" hidden></div>
   </div>
-  <nav>
-    <button data-tab="build" class="on">건물</button>
-    <button data-tab="island">강화</button>
-    <button data-tab="crew">동료<span class="badge" hidden></span></button>
-    <button data-tab="life">생활<span class="badge" hidden></span></button>
-    <button data-tab="book">도감<span class="badge" hidden></span></button>
-  </nav>
-  <div id="panel"></div>
+  <!-- 오른쪽에서 밀려 나오는 서랍. 왼쪽 세로 줄에서 탭을 고릅니다 -->
+  <aside id="drawer" aria-hidden="true">
+    <button id="drawerclose" title="닫기">✕</button>
+    <nav>
+      <button data-tab="build" class="on"><span class="ic">🔨</span><span class="lb">건물</span></button>
+      <button data-tab="island"><span class="ic">⬆️</span><span class="lb">강화</span></button>
+      <button data-tab="crew"><span class="ic">🧑‍🌾</span><span class="lb">동료</span><span class="badge" hidden></span></button>
+      <button data-tab="life"><span class="ic">🌱</span><span class="lb">생활</span><span class="badge" hidden></span></button>
+      <button data-tab="book"><span class="ic">📖</span><span class="lb">도감</span><span class="badge" hidden></span></button>
+      <hr>
+      <button data-tab="mission"><span class="ic">📜</span><span class="lb">미션</span><span class="badge" hidden></span></button>
+      <button data-tab="sail"><span class="ic">⛵</span><span class="lb">항해</span><span class="badge" hidden></span></button>
+      <button data-tab="friends"><span class="ic">👫</span><span class="lb">친구</span></button>
+      <button data-tab="me" hidden></button>
+    </nav>
+    <div id="panel"></div>
+  </aside>
 </div>
 <div id="modal"><div class="box" id="mbox"></div></div>
-<div id="guide"></div>
+<div id="guide"></div>
+<!-- 세로로 들었을 때: 가로로 돌려 달라는 안내 -->
+<div id="rotate" aria-hidden="true">
+  <div class="rot-art"><div class="rot-phone"><i></i></div><div class="rot-arrow">↻</div></div>
+  <h2>가로로 돌려 주세요</h2>
+  <p>무인도 키우기는 가로 화면에서 즐겨요.<br>휴대폰을 옆으로 돌리면 바로 이어집니다.</p>
+  <button id="rotfix" hidden>가로 화면으로 고정하기</button>
+</div>
 </body>
 </html>
