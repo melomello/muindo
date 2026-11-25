@@ -1,0 +1,2 @@
+Pretendard (https://github.com/orioncactus/pretendard) 글꼴에서 자주 쓰는 한글 2,350자와 영문, 숫자, 기호만 남긴 것입니다.
+SIL Open Font License 1.1 로 배포됩니다. Copyright (c) 2021 Kil Hyung-jin.
